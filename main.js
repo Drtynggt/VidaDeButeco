@@ -16,7 +16,7 @@ if(fimFrame){
   if(Math.floor(Math.random()*10)<3){
     evento();
   } else {
-  seleciona(['Relacionar','Cometer um crime','Avancar um ano'], (e,i) => {
+  seleciona(['Relações','Crime','Ocupação','Avancar um ano'], (e,i) => {
   switch(i){
     case 0:
       relacoes();
@@ -25,10 +25,17 @@ if(fimFrame){
       crime();
     break;
     case 2:
+      ocupacao();
+    break;
+    case 3:
       player.idade++;
       escreve('Agora você tem ' + player.idade + ' anos');
       Object.keys(pessoas).forEach((c) => pessoas[c].forEach((pessoa) => pessoa.idade++))
       fimFrame = true;
+      if(player.idade==5){
+        escreve('Voce entrou para a escola')
+        player.emprego = empregos.find(emprego => emprego.nome=='Escola');
+      }
     break;
   }
   })

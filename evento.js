@@ -2,7 +2,7 @@ function conhecePessoas(){
   let random = Math.floor(Math.random()*4);
   if(random==0){
     let genero = amostra(['Homem','Mulher']);
-    let pessoa = criaPessoa(amostra(nomes[genero]), amostra(sobrenomes), amostra(raio(Math.abs(player.idade-5),player.idade+5)), 'Amigo', amostra(empregos), genero);
+    let pessoa = criaPessoa(amostra(nomes[genero]), amostra(sobrenomes), amostra(raio(Math.abs(player.idade-5),player.idade+5)), 'Amigo', amostra(empregos), genero, 5);
     escreve('Voce conheceu ' + pessoa.nome +  '. Ele quer ser seu amigo');
     escreve('Voce aceita?')
     seleciona(['Sim','Nao'],(e) => {

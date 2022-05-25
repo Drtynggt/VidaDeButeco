@@ -36,7 +36,32 @@ let crimes = {
       }
     ],
     'idade': 9
-  }
+  }, 
+  'Tortura': {
+    'formas': [
+      {
+        'nome': 'Obrigar a ouvir BTS',
+        'conseqs': [
+          {
+            'texto': 'Voce pos DNA em uma ciaxa de som para torturar',
+            'letal': false,
+            'chancePolicia': 0,
+            'relac': -10
+          },
+          {
+            'texto': 'Voce pos headset com bts tocando e colou uma foto do Jimin no rosto do',
+            'letal': false,
+            'chancePolicia': 0,
+            'relac': -10
+          },
+          {
+            
+          }
+        ]
+      },
+    ],
+    'idade': 15
+    }
 }
 let empregos = [
   {
@@ -58,8 +83,17 @@ let empregos = [
     'nome': 'Padaria',
     'cargos': ['Faxineiro','Caixa','Padeiro','Doceiro'],
     'salarioBase': 4000
+  },
+  {
+    'nome': 'Escola',
+    'visivel': false
   }
 ];
+let perguntasEmprego = [
+  ['Se voce fosse um ar condicionado, onde voce ficaria?', ['Em cima', 'Em baixo'], 0],
+  ['A noite a piscina fica mais...', ['Quente', 'Fria'],0],
+  ['A formula de báskara serve para...',['Resolver equações biquadradas', 'Resolver equação de segundo grau'],1]
+]
 let nomes = {
   'Homem': [
     'Davi', 'Joao', 'Daniel', 'Igro', 'Nathan', 'Matheus', 'Rafael', 'Diogo', 'Felipe', 'Andre', 'Samuel'
@@ -69,7 +103,7 @@ let nomes = {
   ]
 }
 let sobrenomes = [
-  'Vieira', 'Bittecourt', 'Azzi', 'Giardini', 'Leite', 'Farinha', 'Correia', 'Vermeule', 'Abreu', 'Valim', 'Marques'
+  'Vieira', 'Bittecourt', 'Azzi', 'Giardini', 'Leite', 'Farinha', 'Correia', 'Vermeule', 'Abreu', 'Valim', 'Marques', 'Nunes', 'Eller', 'Lage', 'Gianluca'
 ]
 let acoes = [
   {
