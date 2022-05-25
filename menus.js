@@ -67,7 +67,7 @@ function ocupacao(){
                 escreve('Eles ficaram tão felizes com a resposta correta que te contrataram');
                 player.emprego = empregos[i]; 
                 let nColegas = amostra(raio(5,15));
-                for(let i=0; i<nColegas;i++){
+                for(let k=0; k<nColegas;k++){
                   let genero = amostra(['Homem','Mulher']);
                   pessoas['Colegas'].push(criaPessoa(amostra(nomes[genero]), amostra(sobrenomes), amostra(raio(13,50)), 'Colega de trabalho', empregos[i], genero,amostra(raio(5,5))))
                 }
