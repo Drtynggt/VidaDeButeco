@@ -1,6 +1,6 @@
 let fimFrame = true;
-pessoas['Parentes'].push( criaPessoa(amostra(nomes['Homem']), amostra(sobrenomes), amostra(raio(13,60)), 'Pai', amostra(empregos), 'Homem') );
-pessoas['Parentes'].push(criaPessoa(amostra(nomes['Mulher']), amostra(sobrenomes), amostra(raio(13,60)), 'Mae', amostra(empregos), 'Mulher'));
+pessoas['Parentes'].push( criaPessoa(amostra(nomes['Homem']), amostra(sobrenomes), amostra(raio(13,50)), 'Pai', amostra(empregos), 'Homem',amostra(raio(5,5))));
+pessoas['Parentes'].push(criaPessoa(amostra(nomes['Mulher']), amostra(sobrenomes), amostra(raio(13,50)), 'Mae', amostra(empregos), 'Mulher',amostra(raio(5,5))));
 console.log('asadusipo');
 player = {
     'nome': amostra(nomes),

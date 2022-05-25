@@ -1,11 +1,12 @@
-function criaPessoa( nome,sobrenome,idade,relac,emprego,genero){
+function criaPessoa( nome,sobrenome,idade,relac,emprego,genero,nRelac){
   return {
     'nome': nome,
     'sobrenome': sobrenome,
     'idade': idade,
     'relac': relac,
     'emprego': emprego,
-    'genero': genero
+    'genero': genero,
+    'nRelac': nRelac
   };
 }
 function amostra(array){

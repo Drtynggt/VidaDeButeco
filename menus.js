@@ -4,7 +4,7 @@ function relacoes(){
   seleciona(Object.keys(pessoas),(c) => {
     escreve('Escolha a pessoa');
     seleciona(pessoas[c].map((pessoa) => pessoa.nome) , (pessoa,i) => {
-      escreve(pessoas[c][i].nome + ' ' + pessoas[c][i].sobrenome + '\n' + pessoas[c][i].relac + '\n' + pessoas[c][i].emprego.nome + '\n' + pessoas[c][i].idade + ' anos' + '\n')
+      escreve(pessoas[c][i].nome + ' ' + pessoas[c][i].sobrenome + '\n' + pessoas[c][i].relac + '\n' + pessoas[c][i].emprego.nome + '\n'+ pessoas[c][i].nRelac + ' de relacionamento\n' + pessoas[c][i].idade + ' anos' + '\n')
       escreve('O que voce deseja fazer com ela?');
       seleciona(acoes.filter((acao) => {
         if(player.idade>=acao.idade){
@@ -14,7 +14,9 @@ function relacoes(){
       }).map((acao) => acao.nome), (acao,j) => {
         let conseq = amostra(acoes[j].chances);
         escreve(conseq[0] + ' ' + pessoas[c][i].nome + '\n');
-        escreve('Ganhou ' + amostra(conseq[1]) + ' de ralacionamento com ' + pessoas[c][i].nome + '\n')
+        let nRelac = amostra(conseq[1]);
+        escreve('Ganhou ' + nRelac + ' de ralacionamento com ' + pessoas[c][i].nome + '\n');
+        pessoas[c][i].nRelac += nRelac
         fimFrame = true;
       })
     }, () => {fimFrame = true;})
@@ -37,7 +39,7 @@ function crime(){
           pessoas[c].splice(j,1);
           escreve('Voce matou ' + pessoa + '\n')
         } else {
-          pessoas[c][j].relac-=conseq.relac;
+          pessoas[c][j].nRelac-=conseq.relac;
           escreve('Voce perdeu ' + conseq.relac + ' de relacionamento' + '\n')
         }
         fimFrame = true;
