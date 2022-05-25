@@ -22,13 +22,13 @@ function criaBotao(text,cb){
   entradaAtual.append(obj);
 }
 function escreve(text){
+      mudaSaida();
   saidaAtual.innerHTML+=text;
-  mudaEntrada();
-    mudaSaida();
 
 }
 
 function seleciona(names,cb,cb2){
+    mudaEntrada();
   let stop = false;
   if(names.length>0){
   names.forEach( (name,i) => {
@@ -42,7 +42,5 @@ function seleciona(names,cb,cb2){
   } else{
     cb2();
   }
-  mudaSaida();
-    mudaEntrada();
 
 }

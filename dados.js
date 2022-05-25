@@ -15,23 +15,27 @@ let crimes = {
         'nome': 'Estrangulamento',
         'conseqs': [
           {
-            'texto': 'Voce estrangulou seu',
+            'texto': 'Voce estrangulou',
             'letal': true,
-            'chancePolicia': 2
+            'chancePolicia': 2,
+            'relac': 0
           },
           {
-            'texto': 'Voce estrangulou seu',
+            'texto': 'Voce estrangulou',
             'letal': true,
-            'chancePolicia': 3
+            'chancePolicia': 3,
+            'relac': 0
           },
                     {
-            'texto': 'Voce falhou ao estrangular seu',
-            'letal': true,
-            'chancePolicia': 2
+            'texto': 'Voce falhou ao estrangular',
+            'letal': false,
+            'chancePolicia': 2,
+            'relac': -1
           }
         ]
       }
-    ]
+    ],
+    'idade': 9
   }
 }
 let empregos = [

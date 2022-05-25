@@ -9,10 +9,25 @@ player = {
     'emprego': null,
     'genero': 'Homem'
   }
+
 function update() {
 if(fimFrame){
  fimFrame = false;
-  relacoes();
+  seleciona(['Relacionar','Cometer um crime','Avancar um ano'], (e,i) => {
+  switch(i){
+    case 0:
+      relacoes();
+    break;
+    case 1:
+      crime();
+    break;
+    case 2:
+      player.idade++;
+      escreve('Agora você tem ' + player.idade + ' anos');
+      fimFrame = true;
+    break;
+  }
+  })
 }
 window.requestAnimationFrame(update);
 }
