@@ -1,6 +1,6 @@
 let fimFrame = true;
-cria_pessoa('Parentes',amostra(nomes['Homem']), amostra(sobrenomes), amostra(Array.from(Array(70).keys())), 'Pai', amostra(empregos), 'Homem');
-cria_pessoa('Parentes',amostra(nomes['Mulher']), amostra(sobrenomes), amostra(Array.from(Array(70).keys())), 'Mae', amostra(empregos), 'Mulher');
+pessoas['Parentes'].push( criaPessoa(amostra(nomes['Homem']), amostra(sobrenomes), amostra(raio(13,60)), 'Pai', amostra(empregos), 'Homem') );
+pessoas['Parentes'].push(criaPessoa(amostra(nomes['Mulher']), amostra(sobrenomes), amostra(raio(13,60)), 'Mae', amostra(empregos), 'Mulher'));
 console.log('asadusipo');
 player = {
     'nome': amostra(nomes),
@@ -12,7 +12,10 @@ player = {
 
 function update() {
 if(fimFrame){
- fimFrame = false;
+  fimFrame = false;
+  if(Math.floor(Math.random()*10)<3){
+    evento();
+  } else {
   seleciona(['Relacionar','Cometer um crime','Avancar um ano'], (e,i) => {
   switch(i){
     case 0:
@@ -28,6 +31,7 @@ if(fimFrame){
     break;
   }
   })
+  }
 }
 window.requestAnimationFrame(update);
 }

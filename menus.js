@@ -46,7 +46,7 @@ function crime(){
         escreve('Você não tem idade para isso')
         fimFrame = true;
       }
-    })
+    }, () => fimFrame = true)
   })
     })
 })
