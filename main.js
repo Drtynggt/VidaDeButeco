@@ -27,6 +27,7 @@ if(fimFrame){
     case 2:
       player.idade++;
       escreve('Agora você tem ' + player.idade + ' anos');
+      Object.keys(pessoas).forEach((c) => pessoas[c].forEach((pessoa) => pessoa.idade++))
       fimFrame = true;
     break;
   }
