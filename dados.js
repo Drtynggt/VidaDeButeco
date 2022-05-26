@@ -43,19 +43,16 @@ let crimes = {
         'nome': 'Obrigar a ouvir BTS',
         'conseqs': [
           {
-            'texto': 'Voce pos DNA em uma ciaxa de som para torturar',
+            'texto': 'Voce pos DNA em uma caixa de som para torturar',
             'letal': false,
-            'chancePolicia': 0,
+            'chancePolicia': 999,
             'relac': -10
           },
           {
             'texto': 'Voce pos headset com bts tocando e colou uma foto do Jimin no rosto do',
             'letal': false,
-            'chancePolicia': 0,
+            'chancePolicia': 999,
             'relac': -10
-          },
-          {
-            
           }
         ]
       },
@@ -82,6 +79,11 @@ let empregos = [
   {
     'nome': 'Padaria',
     'cargos': ['Faxineiro','Caixa','Padeiro','Doceiro'],
+    'salarioBase': 4000
+  },
+  {
+    'nome': 'Hospital',
+    'cargos': ['Faxineiro','Enfermeiro','Medico','Cirurgião'],
     'salarioBase': 4000
   },
   {
@@ -112,6 +114,27 @@ let acoes = [
       ['Voce foi ao cinema com', [3,2]],
       ['Voce foi ao parque com', [4,2,3,3]],
       ['Voce foi assistir um racha e saiu no soco com', [-1,0,-1]]
+    ],
+    'idade': 0
+  },
+  {
+    'nome': 'Beijar',
+    'chances': [
+      ['Voce completamete rejeitado por', [-1,-2]],
+      ['Voce beijou', [4,3]],
+      ['Voce foi xingado de fedorento mas conseguiu beijar', [-1,2,-1]]
+    ],
+    'idade': 7
+  }
+]
+let acoesCadeia = [
+  {
+    'nome': 'Passar Tempo',
+    'chances': [
+      ['Voce jogou baralho durante o intervalo com',[1,3]],
+      ['Voce jogou bola de meia com',[4,3]],
+      ['Voce brincou de pega-pega com',[1,1]],
+      ['Voce saiu no soco com',[-5,-7]],
     ],
     'idade': 0
   }

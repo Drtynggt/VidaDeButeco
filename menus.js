@@ -2,6 +2,7 @@
 function relacoes(){
   escreve('Escolha uma categoria');
   seleciona(Object.keys(pessoas),(c) => {
+    if(pessoas[c].length>0){
     escreve('Escolha a pessoa');
     seleciona(pessoas[c].map((pessoa) => pessoa.nome) , (pessoa,i) => {
       escreve(pessoas[c][i].nome + ' ' + pessoas[c][i].sobrenome + '\n' + pessoas[c][i].relac + '\n' + pessoas[c][i].emprego.nome + '\n'+ pessoas[c][i].nRelac + ' de relacionamento\n' + pessoas[c][i].idade + ' anos' + '\n')
@@ -20,6 +21,10 @@ function relacoes(){
         fimFrame = true;
       })
     }, () => {fimFrame = true;})
+    } else {
+      escreve('Voce não tem nenhum conhecido nessa categoria');
+      fimFrame = true;
+    }
   });
 }
 function crime(){
@@ -42,7 +47,20 @@ function crime(){
               pessoas[c][j].nRelac-=conseq.relac;
               escreve('Voce perdeu ' + conseq.relac + ' de relacionamento' + '\n')
             }
-            fimFrame = true;
+            let policia = Math.floor(Math.random()*conseq.chancePolicia);
+            if(policia==0){
+              escreve('Os policiais te prenderam');
+              seleciona(['Aceitar a prisão', 'Suborná-los'], (e2) => {
+                if(e2=='Aceitar a prisão'){
+                  let anosDeCadeia = Math.floor( Math.random() * 20);
+                  player.preso = anosDeCadeia;
+                  escreve('Voce foi preso por ' + anosDeCadeia + ' anos' );
+                  fimFrame = true;
+                }
+              })
+            } else {
+              fimFrame = true;
+            }
           } else {
             escreve('Você não tem idade para isso')
             fimFrame = true;

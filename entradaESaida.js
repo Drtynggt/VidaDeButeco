@@ -18,7 +18,10 @@ function criaBotao(text,cb){
   let obj = document.createElement('button');
   obj.innerHTML = text;
   obj.className = 'botao';
-  obj.onclick = cb;
+  obj.onclick = () => {
+    obj.style.backgroundColor = 'rgb(0, 55, 3)';
+    cb();
+  };
   entradaAtual.append(obj);
 }
 function escreve(text){

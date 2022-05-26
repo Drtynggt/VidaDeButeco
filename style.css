@@ -16,6 +16,9 @@ html, body {
   font-size: 2vw;
   margin: 1vw;
 }
+.apertado {
+  background:rgb(0, 70, 13)
+}
 .saida {
   word-break: normal;
   width: 98vw;
