@@ -35,37 +35,41 @@ function crime(){
         escreve('Quem voce deseja cometer esse crime?');
         escreve('Escolha uma categoria:');
         seleciona(Object.keys(pessoas),(c) => {
-          escreve('Escolha o nome da pessoa:');
-          seleciona(pessoas[c].map((pessoa) => pessoa.nome) , (pessoa,j) => {
-          if(crimes[e].idade<player.idade){
-            let conseq = amostra(crimes[e].formas[i].conseqs);
-            escreve(conseq.texto + ' ' + pessoa + '\n');
-            if(conseq.letal){
-              pessoas[c].splice(j,1);
-              escreve('Voce matou ' + pessoa + '\n')
-            } else {
-              pessoas[c][j].nRelac-=conseq.relac;
-              escreve('Voce perdeu ' + conseq.relac + ' de relacionamento' + '\n')
-            }
-            let policia = Math.floor(Math.random()*conseq.chancePolicia);
-            if(policia==0){
-              escreve('Os policiais te prenderam');
-              seleciona(['Aceitar a prisão', 'Suborná-los'], (e2) => {
-                if(e2=='Aceitar a prisão'){
-                  let anosDeCadeia = Math.floor( Math.random() * 20);
-                  player.preso = anosDeCadeia;
-                  escreve('Voce foi preso por ' + anosDeCadeia + ' anos' );
-                  fimFrame = true;
-                }
-              })
-            } else {
+          if(pessoas[c].length>0){escreve('Escolha o nome da pessoa:');
+            seleciona(pessoas[c].map((pessoa) => pessoa.nome) , (pessoa,j) => {
+            if(crimes[e].idade<player.idade){
+              let conseq = amostra(crimes[e].formas[i].conseqs);
+              escreve(conseq.texto + ' ' + pessoa + '\n');
+              if(conseq.letal){
+                pessoas[c].splice(j,1);
+                escreve('Voce matou ' + pessoa + '\n')
+              } else {
+                pessoas[c][j].nRelac-=conseq.relac;
+                escreve('Voce perdeu ' + conseq.relac + ' de relacionamento' + '\n')
+              }
+              let policia = Math.floor(Math.random()*conseq.chancePolicia);
+              if(policia==0){
+                escreve('Os policiais te prenderam');
+                seleciona(['Aceitar a prisão', 'Suborná-los'], (e2) => {
+                  if(e2=='Aceitar a prisão'){
+                    let anosDeCadeia = Math.floor( Math.random() * 20);
+                    player.preso = anosDeCadeia;
+                    escreve('Voce foi preso por ' + anosDeCadeia + ' anos' );
+                    fimFrame = true;
+                  }
+                })
+              
+              } else {
+                fimFrame = true;
+              }
+          }   else {
+              escreve('Você não tem idade para isso')
               fimFrame = true;
             }
-          } else {
-            escreve('Você não tem idade para isso')
-            fimFrame = true;
-          }
-        }, () => fimFrame = true)
+          }, () => fimFrame = true)
+        } else {
+            escreve('Voce não conhece ninguem nessa categoria');
+        }
       })
     })
   })
